@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Produtos</title>
+<link href="style/style.css" rel="stylesheet">
+</head>
+<body>
+	<h1 class="title">Lista de Produtos</h1>
+	<div>
+		<button class="botao">
+			<a href="new_product" class="link">Criar novo produto</a>
+		</button>
+	</div>
+	<table border="1" cellpadding="10" class=table>
+		<thead>
+
+			<tr>
+				<th>PRODUTO ID</th>
+				<th>NOME</th>
+				<th>MARCA</th>
+				<th>MADE IN</th>
+				<th>PREÇO</th>
+				<th>AÇOES</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="ProductModel:${listProduct}">
+				<td th:text="${ProductModel.idProduct}">Product ID</td>
+				<td th:text="${ProductModel.name}">Name</td>
+				<td th:text="${ProductModel.brand}">Brand</td>
+				<td th:text="${ProductModel.madein}">madeIn</td>
+				<td th:text="${ProductModel.price}">Price</td>
+				<td><a th:href="@{'/edit/' + ${ProductModel.idProduct}}">Edit</a>
+					&nbsp;&nbsp;&nbsp; <a
+					th:href="@{'/delete/' + ${ProductModel.idProduct}}">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+</html>

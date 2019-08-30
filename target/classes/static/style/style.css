@@ -1,0 +1,30 @@
+.title {
+	color:red;
+	text-align:center;
+}
+
+.table {
+	margin:auto;
+	text-align: center;
+	width: 50%;
+}
+
+.botao {
+    position: relative;
+    margin: 30px auto;
+    left: 45%;
+}
+
+.botao:hover {
+    color: black;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+#voltar {
+	color: black;
+    text-decoration: none;
+}
